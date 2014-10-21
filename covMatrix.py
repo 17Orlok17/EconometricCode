@@ -20,6 +20,8 @@ def covMatrix(xMat):
     dim = xMat.shape
     dim = dim[1]
     covMat = np.zeros((dim,dim))
+    #Could use symmetry to fill in lower triangular form,
+    #cut calls by half
     for i in range(0,dim):
         for j in range(0,dim):
             covMat[i,j] = covariance(xMat[:,i],xMat[:,j])
